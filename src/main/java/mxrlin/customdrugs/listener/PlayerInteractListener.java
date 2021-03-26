@@ -1,6 +1,7 @@
 package mxrlin.customdrugs.listener;
 
 import mxrlin.customdrugs.CustomDrug;
+import mxrlin.customdrugs.api.events.CreateDrugEvent;
 import mxrlin.customdrugs.commands.DrugCommand;
 import mxrlin.customdrugs.drugs.Drug;
 import mxrlin.customdrugs.helper.items.ItemBuilder;
@@ -9,6 +10,7 @@ import mxrlin.customdrugs.helper.phone.PhoneRinging;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
@@ -118,9 +120,14 @@ public class PlayerInteractListener implements Listener {
                         if(DrugCommand.drugInProcess.get(p.getUniqueId()) == null) return;
 
                         Drug d = DrugCommand.drugInProcess.get(p.getUniqueId());
+
+                        DrugCommand.drugInProcess.remove(p.getUniqueId());
+                        CreateDrugEvent event = new CreateDrugEvent(d, p);
+                        Bukkit.getPluginManager().callEvent(event);
+                        if(event.isCancelled()) return;
+
                         CustomDrug.instance.getHandler().createNewDrug(d.getName(), d.getDrugEffectTypes(), d.getDrugDurationInSeconds(), d.getDescription(), d.getSellPrice(), d.getBuyPrice());
                         p.sendMessage(Language.getMessage("finishcreation"));
-                        DrugCommand.drugInProcess.remove(p.getUniqueId());
 
                         Bukkit.getScheduler().scheduleSyncDelayedTask(CustomDrug.instance, () -> p.getInventory().clear(), 2);
                     }else if(e.getItem().getItemMeta().getDisplayName().equals(Language.getMessage("cancelname"))){

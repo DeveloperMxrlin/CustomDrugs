@@ -1,12 +1,14 @@
 package mxrlin.customdrugs.citizens.listener;
 
 import mxrlin.customdrugs.CustomDrug;
+import mxrlin.customdrugs.api.events.DrugInventoryPerNPCEvent;
 import mxrlin.customdrugs.drugs.Drug;
 import mxrlin.customdrugs.drugs.DrugHandler;
 import mxrlin.customdrugs.helper.items.ItemBuilder;
 import mxrlin.customdrugs.helper.Language;
 import mxrlin.customdrugs.helper.infinv.ScrollerInventory;
 import net.citizensnpcs.api.event.NPCRightClickEvent;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -23,7 +25,12 @@ public class NPCRightClickListener implements Listener {
         Player p = e.getClicker();
         if(e.getNPC().getName().equals(CustomDrug.instance.getDrugHandlerName())){
 
+            DrugInventoryPerNPCEvent npc = new DrugInventoryPerNPCEvent(p, e.getNPC());
+            Bukkit.getPluginManager().callEvent(npc);
+            if(npc.isCancelled()) return;
+
             DrugHandler.openHandlerMenu(p);
+
         }
     }
 }

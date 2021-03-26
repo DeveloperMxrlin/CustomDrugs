@@ -1,6 +1,9 @@
 package mxrlin.customdrugs.listener;
 
 import mxrlin.customdrugs.CustomDrug;
+import mxrlin.customdrugs.api.events.BuyDrugEvent;
+import mxrlin.customdrugs.api.events.GetDrugEvent;
+import mxrlin.customdrugs.api.events.SellDrugEvent;
 import mxrlin.customdrugs.commands.DrugCommand;
 import mxrlin.customdrugs.drugs.Drug;
 import mxrlin.customdrugs.helper.DrugEconomy;
@@ -91,9 +94,18 @@ public class InventoryClickListener implements Listener {
 
                     if(eco.hasEnoughMoney()){
 
-                        p.getInventory().addItem(new ItemBuilder(Material.SLIME_BALL, 1, (short) 0).setDisplayName(d.getName()).setLore(druglore).build());
+                        BuyDrugEvent event = new BuyDrugEvent(d, p);
+                        Bukkit.getPluginManager().callEvent(event);
+                        if(event.isCancelled()) return;
+
                         eco.remMoney();
                         p.sendMessage(Language.getMessage("boughtdrug").replace("%buyprice%", d.getBuyPrice() + ""));
+
+                        GetDrugEvent event1 = new GetDrugEvent(p, d);
+                        Bukkit.getPluginManager().callEvent(event1);
+                        if(event1.isCancelled()) return;
+
+                        p.getInventory().addItem(new ItemBuilder(Material.SLIME_BALL, 1, (short) 0).setDisplayName(d.getName()).setLore(druglore).build());
 
                     }else p.sendMessage(Language.getMessage("notenoughmoney"));
 
@@ -110,6 +122,7 @@ public class InventoryClickListener implements Listener {
                                     && p.getInventory().getItem(i).getItemMeta().getLore().equals(druglore)){
 
                                 slot = i;
+                                break;
 
                             }
                         }
@@ -123,6 +136,10 @@ public class InventoryClickListener implements Listener {
 
                     int amt = p.getInventory().getItem(slot).getAmount();
                     ItemStack is = p.getInventory().getItem(slot);
+
+                    SellDrugEvent event = new SellDrugEvent(d, p);
+                    Bukkit.getPluginManager().callEvent(event);
+                    if(event.isCancelled()) return;
 
                     p.getInventory().setItem(slot, new ItemBuilder(is).setAmount(amt - 1).build());
 

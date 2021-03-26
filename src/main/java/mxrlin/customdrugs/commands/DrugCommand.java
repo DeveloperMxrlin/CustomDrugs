@@ -1,6 +1,9 @@
 package mxrlin.customdrugs.commands;
 
 import mxrlin.customdrugs.CustomDrug;
+import mxrlin.customdrugs.api.events.DeleteDrugEvent;
+import mxrlin.customdrugs.api.events.DrugInventoryPerTelephoneEvent;
+import mxrlin.customdrugs.api.events.GetDrugEvent;
 import mxrlin.customdrugs.citizens.CreateNPC;
 import mxrlin.customdrugs.drugs.Drug;
 import mxrlin.customdrugs.drugs.DrugHandler;
@@ -112,6 +115,14 @@ public class DrugCommand implements CommandExecutor {
                     p.sendMessage(Language.getMessage("drugdoesntexist"));
                     return false;
                 }
+
+                Drug d = CustomDrug.instance.getHandler().getDrugObjects().get(drug);
+
+                DeleteDrugEvent event = new DeleteDrugEvent(d, p);
+                Bukkit.getPluginManager().callEvent(event);
+
+                if(event.isCancelled()) return false;
+
                 CustomDrug.instance.getHandler().delDrug(drug);
                 p.sendMessage(Language.getMessage("drugdeleted"));
             }else if(args[0].equalsIgnoreCase("get")){
@@ -126,6 +137,10 @@ public class DrugCommand implements CommandExecutor {
                 }
 
                 Drug d = CustomDrug.instance.getHandler().getDrugObjects().get(drugname);
+
+                GetDrugEvent event1 = new GetDrugEvent(p, d);
+                Bukkit.getPluginManager().callEvent(event1);
+                if(event1.isCancelled()) return false;
 
                 List<String> potsname = new ArrayList<>();
                 for(PotionEffectType type : d.getDrugEffectTypes()){
@@ -143,6 +158,10 @@ public class DrugCommand implements CommandExecutor {
 
             }else if(args[0].equalsIgnoreCase("telephone") && args[1].equalsIgnoreCase("accept")){
                 if(PlayerInteractListener.waitingforanswer.contains(p.getUniqueId())){
+
+                    DrugInventoryPerTelephoneEvent event = new DrugInventoryPerTelephoneEvent(p);
+                    Bukkit.getPluginManager().callEvent(event);
+                    if(event.isCancelled()) return false;
 
                     PlayerInteractListener.waitingforanswer.remove(p.getUniqueId());
                     DrugHandler.openHandlerMenu(p);
