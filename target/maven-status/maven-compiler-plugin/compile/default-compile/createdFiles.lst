@@ -21,7 +21,6 @@ mxrlin\customdrugs\commands\DrugCommand.class
 mxrlin\customdrugs\api\events\OpenDrugInventoryEvent.class
 mxrlin\customdrugs\api\events\SellDrugEvent.class
 mxrlin\customdrugs\citizens\CreateNPC.class
-mxrlin\customdrugs\listener\BuyDrugListener.class
 mxrlin\customdrugs\helper\UpdateChecker.class
 mxrlin\customdrugs\helper\RecipeLoader.class
 mxrlin\customdrugs\api\events\GetDrugEvent.class
