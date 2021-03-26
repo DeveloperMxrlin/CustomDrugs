@@ -1,0 +1,26 @@
+
+
+
+# Set the prefix of the plugin. In every message you can import this with '%prefix%'.
+prefix: "&c&l[Customdrugs]&r"
+
+# Shortcuts for the basic command '/customdrugs'
+aliases:
+  - "cd"
+  - "drugs"
+
+# The Time in SECONDS on how long he can click on the message, when he phoned the Dealer.
+waitphoneinsecs: 15
+
+# The Values on how much the Sell/Buyprice should go down by clicking on it.
+minusoption1: 0.1
+minusoption2: 1.0
+minusoption3: 10.0
+
+# The Values on how much the Sell/Buyprice should go up by clicking on it.
+plusoption1: 10.0
+plusoption2: 1.0
+plusoption3: 0.1
+
+# Enable / Disable the Updatechecker (true = yes | false = no)
+update-checker: true

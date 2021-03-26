@@ -1,0 +1,126 @@
+noperm: "%prefix% You dont have the required &cpermissions &fto execute this command!" # The Message, when a player types in a command on that he dont have permissions.
+noplayer: "%prefix% You have to be a &cplayer&f to execute this command!" # The Message, when the console tries to execute the command.
+help: "&8>> &c%point% &8| &f%help%" # The Format, when you type in /customdrugs
+usenumber: "%prefix% You have to use an number!" # The Message when you use a Letter instead of a number.
+drugcreation: "%prefix% You're now in the Drugcreation process!" # The Message, when you enter the drugcreation.
+alreadyindrugcreation: "%prefix% You are already in the Drugcreation process!" # The Message, when you want to enter the drug creation, while being in the drug creation.
+drugdoesntexist: "%prefix% The Drug doesnt exist!" # The Message, when you type in a Drug name from a not known Drug
+drugdeleted: "%prefix% You deleted the Drug!" # The Message, when you successfully deleted a Drug.
+handlerspawned: "%prefix% You spawned the Handler!" # The Message, when you spawned the Handler.
+applieddrug: "%prefix% &fYou consumed the drug!" # The Message, when you're consuming a drug.
+handlerhavenothing: "&c&l[Handler] &fSorry, but I have nothing to give to you right now." # The Message, when the Handler have no Drugs. (No drugs exist)
+citizensnotloaded: "%prefix% &fThe Handler can't be spawned, because Citizens isn't loaded." # The Message, when you want to create the Handler NPC but didnt load Citizens.
+essentialsnotloaded: "%prefix% &fEssentials is not loaded, so you can't buy/sell Drugs." # The Message, when you want to sell or buy drugs but Essentials is not loaded.
+commanddoesntexist: "%prefix% &fThe command doesnt exist. Type &7/customdrugs &fto see all commands." # The Message, when you type in a command that isn't in the plugin.
+drugexist: "%prefix% &fThe Drug already exists!" # The Message, when you want to create a drug that already exist.
+boughtdrug: "%prefix% &fYou bought the Drug! &7(-%buyprice%$)" # The Message, when the player successfully bought a drug.
+notenoughmoney: "%prefix% &fYou don't have enough money to buy this drug!" # The Message, when the Player doesn't have enough money to buy the drug.
+nodrugitem: "%prefix% &fYou don't have this drug in your inventory!" # The Message, when The Player doesn't have the clicked drug in his inventory.
+solddrug: "%prefix% &fYou sold the drug! &7(+%sellprice%$)" # The Message, when the Player successfully sold a drug!
+getdrug: "%prefix% &fYou got the drug!" # The Message, when the Player 'cheated' a drug with /customdrugs get <Drugname>.
+
+setdescriptionname: "&cSet Description" # The Displayname of the 'Description' Item in the Drug creation.
+setdescriptionlore: # The lore of the 'Description' item in the Drug creation.
+  - "&8&m-----"
+  - "&8> &fSet the description of the drug"
+  - "&c&lRIGHT CLICK"
+setdescriptionnow: "%prefix% Write your Description now in the chat!" # The Message, that comes when you clicked the 'Description' Item.
+cantchangeother: "%prefix% You are currently setting the description! Click the Description Item again to cancel it." # The Message, when you're in the 'Change Description Process' and want to change something other.
+cancelddescription: "%prefix% You canceled the description process." # The Message, when you cancel the 'Change Description Process'.
+setdescription: "%prefix% You set the description of your drug!" # The Message, when you successfully changed the Description of The Drug.
+tolongdescription: "%prefix% The description is to long! (Max Characters: 24)" # The Message, when the Description is too long.
+
+setpricename: "&cSet Sell- & Buyprice" # The Displayname of the 'Set Price' Item in the Drug Creation.
+setpricelore: # The Lore of the 'Set Price' Item in the Drug Creation.
+  - "&8&m-----"
+  - "&8> &fSet the Sell- & Buyprice from the drug."
+  - "&c&lRIGHT CLICK"
+setpriceinventoryname: "&cSelect Buy- or Sellprice" # The Inventory name of the inventory where you select, if you want to set the buy- or sellprice.
+selectbuypricename: "&cSet Buyprice" # The Displayname of the Item on that you click, if you want to set the Buyprice.
+selectbuypricelore: # The Lore of the Item on that you click, if you want to set the Buyprice.
+  - "&8&m-----"
+  - "&8> &fClick to set the Buyprice."
+setbuypriceinventoryname: "&cSet Buyprice" # The Inventory Name, of the inv where you set the buyprice.
+
+selectsellpricename: "&cSet Sellprice" # The Displayname of the Item on that you click, if you want to set the Sellprice.
+selectsellpricelore: # The Lore of the Item on that you click, if you want to set the Sellprice.
+  - "&8&m-----"
+  - "&8> &fClick to set the Sellprice."
+setsellpriceinventoryname: "&cSet Sellprice" # The Inventory Name, of the inv where you set the buyprice.
+buysellplusminusname: "%+-%%val%" # The Displayname, of the Items in the Buy/Sell Inventory GUI.
+# %+-% -> If Player clicks on '+' there will be a '+', same with '-'.
+# %val% -> The value on how much the price go up/down. (Can be changed in config.yml)
+currentpricename: "&cCurrently %sellbuy%price: &f%current%"
+# %sellbuy% -> If Player want to set sell price it will be replaced with 'Sell', same with Buyprice.
+# %current% -> The current sell/buy price.
+setsellprice: "%prefix% &fYou set the Sellprice for the drug!" # The Message, when you successfully set the Sellprice for a drug.
+setbuyprice: "%prefix% &fYou set the Buyprice for the drug!" # The Message, when you successfully set the Buyprice for a drug.
+
+setpotionsname: "&cSet Potioneffects" # The Displayname of the 'Effects' Item in the Drug Creation.
+setpotionslore: # The Lore of the 'Effects' Item in the Drug Creation.
+  - "&8&m-----"
+  - "&8> &fSet the Potioneffects of the drug"
+  - "&c&lRIGHT CLICK"
+setpotioninventory: "&cSelect the potion effects." # The Name of the 'Effects' Inventory.
+setpotioninvbarriername: "&cSelect a potion effect." # The Displayname of the barriers in the 'Effects' Inventory.
+setpotioninvbarrierlore: # The Lore of the barriers in the 'Effects' Inventory.
+  - "&8&m-----"
+  - "&8> &fSelect a potion effect. You can"
+  - "&fselect up to 3 Potion effects per drug."
+alreadythreepots: "%prefix% &fYou already selected &c3 Potion Effects&f." # The Message, when you already selected 3 Effects.
+canthavesameeffects: "%prefix% &fYou can't select &cmultiple times &fthe same Potion Effect." # The Message, when you want to use the same Effects multiple times.
+setpotion: "%prefix% &fYou set the potion effects for the drug!" # The Message, when you successfully set the Effects of the Drug.
+
+currentdrugname: "&cCurrent drug:" # The Displayname, of the Thumbnail in the Drug Creation.
+currentdruglore: # The Lore, of the Thumbnail in the Drug Creation.
+  - "&8> &f%drugname%"
+  - "&8&m-----"
+  - "&8> &f%description%"
+  - "&5&lLast for %duration% seconds."
+  - "&8&m-----"
+  - "&f%potions%"
+  - "&8&m-----"
+  - "&e&lLeftclick to buy the drug. (-%buyprice%)"
+  - "&e&lRightclick to sell the drug. (+%sellprice%)"
+
+finishname: "&aFinish Drug Creation" # The Displayname, of the Item with that you finish the Drug Creation.
+finishlore: # The Lore, of the Item with that you finish the Drug creation.
+  - "&8&m-----"
+  - "&8> &fRight click to finish the Drug Creation."
+finishcreation: "%prefix% &fYou finished the Drug!" # The Message, when you successfully finished the Drug.
+
+cancelname: "&cCancel Drug Creation" # The Displayname, of the Item with that you cancel the Drug Creation.
+cancellore: # The Lore, of the Item with that you cancel the Drug Creation.
+  - "&8&m-----"
+  - "&8> &fRight click to cancel the Drug Creation."
+caneldcreation: "%prefix% &fYou canceled the Drug Creation!" # The Message, when you successfully canceled the Drug Creation.
+
+drugslore: # The Lore, of a Drug in the Handler GUI.
+  - "&8&m-----"
+  - "&8> &f%description%"
+  - "&5&lLast for %duration% seconds."
+  - "&8&m-----"
+  - "&f%potions%"
+  - "&8&m-----"
+  - "&e&lLeftclick to buy the drug. (-%buyprice%)"
+  - "&e&lRightclick to sell the drug. (+%sellprice%)"
+
+druglore: # The Lore, of a Drug in your Inventory.
+  - "&8&m-----"
+  - "&8> &fRight click to consume the drug"
+  - "&fand get effects for %duration% seconds."
+  - "&8&m-----"
+  - "&c&lEFFECTS: &f%potions%"
+
+phonename: "&eIllegal-Phone" # The Displayname, of the Phone, with that you call the Handler.
+phonelore: # The Lore, of the Phone, with that you call the Handler.
+  - "&8&m-----"
+  - "&8> &fCall the Handler and get your"
+  - "&fdrugs just over the phone."
+
+phoneanswers: # A List of answers, that the Handler says.
+  - "&a%telephone% Hey, What do you need?"
+  - "&a%telephone% Hello?"
+  - "&a%telephone% You hear the line pick up..."
+  - "&a%telephone% You again? What do you want this time?"
+toolate: "&c%telephone% The line broke up." # The Message, when you're too late with clicking on the Message.

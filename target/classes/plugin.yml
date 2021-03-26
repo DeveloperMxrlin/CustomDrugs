@@ -1,0 +1,8 @@
+name: CustomDrugs
+version: 2.1-SNAPSHOT
+main: mxrlin.customdrugs.CustomDrug
+author: Mxrlin
+api-version: 1.16
+softdepend: [Citizens, Essentials]
+commands:
+  customdrugs:
