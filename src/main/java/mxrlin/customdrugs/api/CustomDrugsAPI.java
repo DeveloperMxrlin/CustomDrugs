@@ -37,6 +37,8 @@ public class CustomDrugsAPI {
 
         if(description.length() > 24) return false;
 
+        if(drugEffectType.size() > 3) return false;
+
         handler.createNewDrug(name, drugEffectType, drugDuration, description, sellPrice, buyPrice);
         return true;
 
@@ -116,4 +118,16 @@ public class CustomDrugsAPI {
         new ScrollerInventory(list, CustomDrug.instance.getDrugHandlerName(), player);
         return true;
     }
+
+    /**
+     * Loads The Handler File and The Drug Folder, and creates the File/Folder if it doesn't exist.
+     * @return Returns a boolean, that is false if something went wrong.
+     */
+    public static boolean loadHandlerFile(){
+
+        handler.loadHandlerFile();
+        return true;
+
+    }
+
 }

@@ -1,4 +1,5 @@
 mxrlin\customdrugs\api\events\DeleteDrugEvent.class
+mxrlin\customdrugs\api\CustomDrugsAPI.class
 mxrlin\customdrugs\drugs\DrugHandler.class
 mxrlin\customdrugs\listener\InventoryCloseListener.class
 mxrlin\customdrugs\helper\items\PlayerHead.class
@@ -11,6 +12,7 @@ mxrlin\customdrugs\drugs\Drug.class
 mxrlin\customdrugs\listener\PlayerInteractListener.class
 mxrlin\customdrugs\api\events\DrugInventoryPerTelephoneEvent.class
 mxrlin\customdrugs\helper\Language.class
+mxrlin\customdrugs\helper\mysql\MySQL.class
 mxrlin\customdrugs\listener\PlayerCommandPreProcessListener.class
 mxrlin\customdrugs\helper\infinv\ScrollerInventory.class
 mxrlin\customdrugs\api\events\CreateDrugEvent.class
@@ -21,11 +23,13 @@ mxrlin\customdrugs\commands\DrugCommand.class
 mxrlin\customdrugs\api\events\OpenDrugInventoryEvent.class
 mxrlin\customdrugs\api\events\SellDrugEvent.class
 mxrlin\customdrugs\citizens\CreateNPC.class
+mxrlin\customdrugs\helper\mysql\MySQLFile.class
 mxrlin\customdrugs\helper\UpdateChecker.class
 mxrlin\customdrugs\helper\RecipeLoader.class
 mxrlin\customdrugs\api\events\GetDrugEvent.class
 mxrlin\customdrugs\listener\BlockPlaceListener.class
 mxrlin\customdrugs\listener\InventoryClickListener.class
 mxrlin\customdrugs\citizens\listener\NPCRightClickListener.class
+mxrlin\customdrugs\helper\mysql\DrugMySQL.class
 mxrlin\customdrugs\drugs\DrugRecipe.class
 mxrlin\customdrugs\helper\phone\PhoneRinging.class

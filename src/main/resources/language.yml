@@ -1,3 +1,12 @@
+# CustomDrugs by Mxrlin
+#
+# https://www.spigotmc.org/members/mxrlin1.1227352/
+#
+# CustomDrugs by Mxrlin
+
+# Don't remove any lines that aren't marked with a '#' at the start.
+# File: language.yml
+
 noperm: "%prefix% You dont have the required &cpermissions &fto execute this command!" # The Message, when a player types in a command on that he dont have permissions.
 noplayer: "%prefix% You have to be a &cplayer&f to execute this command!" # The Message, when the console tries to execute the command.
 help: "&8>> &c%point% &8| &f%help%" # The Format, when you type in /customdrugs

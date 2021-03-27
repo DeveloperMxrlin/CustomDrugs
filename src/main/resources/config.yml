@@ -1,5 +1,11 @@
+# CustomDrugs by Mxrlin
+#
+# https://www.spigotmc.org/members/mxrlin1.1227352/
+#
+# CustomDrugs by Mxrlin
 
-
+# Don't remove any lines that aren't marked with a '#' at the start.
+# File: config.yml
 
 # Set the prefix of the plugin. In every message you can import this with '%prefix%'.
 prefix: "&c&l[Customdrugs]&r"
@@ -24,3 +30,13 @@ plusoption3: 0.1
 
 # Enable / Disable the Updatechecker (true = yes | false = no)
 update-checker: true
+
+# Enable / Disable MySQL. (If MySQL is not enabled, the data will be saved in Files.)
+mysql: false
+
+# Set your MySQL-Data so the Plugin can connect with your MySQL.
+host: "localhost"
+port: "3306"
+database: "test"
+username: "root"
+password: ""

@@ -182,7 +182,7 @@ public class DrugCommand implements CommandExecutor {
                 }
 
                 CreateNPC npc = new CreateNPC(CustomDrug.instance.getDrugHandlerName(), p.getLocation(), EntityType.PLAYER);
-                npc.changeSkin("gestor");
+                npc.changeSkin("uti1ize");
                 npc.spawnNPC();
 
                 p.sendMessage(Language.getMessage("handlerspawned"));

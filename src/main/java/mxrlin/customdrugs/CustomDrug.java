@@ -6,6 +6,9 @@ import mxrlin.customdrugs.drugs.DrugHandler;
 import mxrlin.customdrugs.helper.FileUtilities;
 import mxrlin.customdrugs.helper.RecipeLoader;
 import mxrlin.customdrugs.helper.UpdateChecker;
+import mxrlin.customdrugs.helper.mysql.DrugMySQL;
+import mxrlin.customdrugs.helper.mysql.MySQL;
+import mxrlin.customdrugs.helper.mysql.MySQLFile;
 import mxrlin.customdrugs.listener.*;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -97,11 +100,22 @@ public class CustomDrug extends JavaPlugin {
 
         Bukkit.getConsoleSender().sendMessage("");
 
+        if(MySQLFile.loadMySQL(getConfig())){
+            Bukkit.getConsoleSender().sendMessage("§aMySQL Connected!");
+        }else if(MySQLFile.useMySQL){
+            Bukkit.getConsoleSender().sendMessage("§cSomething went wrong whilst connecting to MySQL. Please check your entered data again!");
+        }else Bukkit.getConsoleSender().sendMessage("§eMySQL isn't connected, because you disabled it!");
+
+        Bukkit.getConsoleSender().sendMessage("");
+
         Bukkit.getConsoleSender().sendMessage("§8§m--- §c§lCUSTOMDRUGS §8§m---");
     }
 
     @Override
     public void onDisable() {
+
+        DrugMySQL.saveDrugs();
+
         Bukkit.getConsoleSender().sendMessage("§8§m--- §c§lCUSTOMDRUGS §8§m---");
 
         Bukkit.getConsoleSender().sendMessage("");
@@ -109,6 +123,14 @@ public class CustomDrug extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§c§lCUSTOMDRUGS DEACTIVATED");
         Bukkit.getConsoleSender().sendMessage("§cVersion: §c§l" + getDescription().getVersion());
         Bukkit.getConsoleSender().sendMessage("§cAuthor: Mxrlin");
+
+        Bukkit.getConsoleSender().sendMessage("");
+
+        if(MySQLFile.disconnectMySQL()){
+            Bukkit.getConsoleSender().sendMessage("§aMySQL disconnected!");
+        }else if(MySQLFile.useMySQL){
+            Bukkit.getConsoleSender().sendMessage("§cSomething went wrong whilst disconnecting MySQL. Please check your entered data again!");
+        }else Bukkit.getConsoleSender().sendMessage("§eMySQL cant disconnect because you disabled MySQL.");
 
         Bukkit.getConsoleSender().sendMessage("");
 

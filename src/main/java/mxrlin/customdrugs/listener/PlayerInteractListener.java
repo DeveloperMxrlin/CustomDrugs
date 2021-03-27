@@ -21,6 +21,7 @@ import org.bukkit.potion.PotionEffectType;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 public class PlayerInteractListener implements Listener {
@@ -178,9 +179,9 @@ public class PlayerInteractListener implements Listener {
             }
 
             int slot = p.getInventory().getHeldItemSlot();
-            int amt = p.getItemInHand().getAmount();
+            int amt = e.getItem().getAmount();
 
-            p.getInventory().setItem(slot, new ItemBuilder(p.getItemInHand()).setAmount(amt - 1).build());
+            Bukkit.getScheduler().scheduleSyncDelayedTask(CustomDrug.instance, () -> p.getInventory().setItem(slot, new ItemBuilder(e.getItem()).setAmount(amt - 1).build()), 2);
 
             p.sendMessage(Language.getMessage("applieddrug"));
         }

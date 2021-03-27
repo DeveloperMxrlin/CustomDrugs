@@ -5,6 +5,8 @@ import mxrlin.customdrugs.drugs.Drug;
 import mxrlin.customdrugs.helper.Language;
 import mxrlin.customdrugs.helper.infinv.ScrollerInventory;
 import mxrlin.customdrugs.helper.items.ItemBuilder;
+import mxrlin.customdrugs.helper.mysql.DrugMySQL;
+import mxrlin.customdrugs.helper.mysql.MySQLFile;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -23,9 +25,23 @@ public class DrugHandler {
     private final Map<String, Drug> drugObjects = new HashMap<>();
     public void loadHandlerFile(){
         final File file = getHandlerFile();
-        final File folder = new File(CustomDrug.instance.getDataFolder() + "//drugs");
+        if(!(file.exists())){
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        final File folder = getDrugFolder();
+        if(!(folder.exists())) folder.mkdirs();
     }
     public void importDrugs(){
+
+        if(MySQLFile.useMySQL){
+            DrugMySQL.importDrugs();
+            return;
+        }
+
         final File handlerfile = getHandlerFile();
         final YamlConfiguration yaml = YamlConfiguration.loadConfiguration(handlerfile);
         final List<String> drugnames = yaml.getStringList("DrugNames");
