@@ -1,10 +1,12 @@
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\api\events\GetDrugEvent.java
+C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\helper\mysql\DrugMySQL.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\helper\RecipeLoader.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\helper\FileUtilities.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\listener\PlayerCommandPreProcessListener.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\drugs\DrugRecipe.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\helper\UpdateChecker.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\commands\DrugCommand.java
+C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\helper\mysql\MySQLFile.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\listener\InventoryClickListener.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\listener\InventoryCloseListener.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\api\events\DeleteDrugEvent.java
@@ -16,6 +18,7 @@ C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\m
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\CustomDrug.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\helper\phone\PhoneRinging.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\helper\infinv\ScrollerInventory.java
+C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\api\CustomDrugsAPI.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\api\events\CreateDrugEvent.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\api\events\DrugInventoryPerNPCEvent.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\api\events\OpenDrugInventoryEvent.java
@@ -28,3 +31,4 @@ C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\m
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\citizens\CreateNPC.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\api\events\DrugInventoryPerTelephoneEvent.java
 C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\listener\AsyncPlayerChatListener.java
+C:\Users\Anwender\Desktop\Coding\Plugins - Workspace\CustomDrugs\src\main\java\mxrlin\customdrugs\helper\mysql\MySQL.java

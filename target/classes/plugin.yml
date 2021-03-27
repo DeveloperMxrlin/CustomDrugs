@@ -1,5 +1,5 @@
 name: CustomDrugs
-version: 2.3-SNAPSHOT
+version: 2.3.1-SNAPSHOT
 main: mxrlin.customdrugs.CustomDrug
 author: Mxrlin
 api-version: 1.16

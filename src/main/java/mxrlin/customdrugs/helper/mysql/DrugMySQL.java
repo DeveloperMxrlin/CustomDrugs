@@ -86,9 +86,32 @@ public class DrugMySQL {
 
         Map<String, Drug> drugs = handler.getDrugObjects();
 
+
+
         if(drugs.size() > 0){
 
+            ResultSet rs = MySQL.getResult("SELECT * FROM drugs");
+            List<String> names = new ArrayList<>();
+
+            try{
+                while (rs.next()){
+
+                    names.add(rs.getString("Name"));
+
+                }
+            }catch (SQLException e){
+                e.printStackTrace();
+            }finally {
+                try{
+                    rs.close();
+                }catch (SQLException e2){
+                    e2.printStackTrace();
+                }
+            }
+
             for(Drug drug : drugs.values()){
+
+                if(names.contains(drug.getName())) return;
 
                 final List<String> effectList = new ArrayList<>();
 
